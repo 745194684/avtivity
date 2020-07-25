@@ -1,0 +1,37 @@
+spring:
+  #Activiti property configuration
+  activiti:
+    database-schema-update: true
+    # history-level: full
+    db-history-used: true
+
+  datasource:
+    url: jdbc:mysql://47.101.153.143:3306/supengcheng
+    username: root
+    password: 123
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+    initialization-mode: always
+
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    filters: log4j
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+  test:
+    mockmvc:
+      print: none
+logging:
+  level:
+    root: off
